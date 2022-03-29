@@ -1,2 +1,2 @@
-# createComponent
+# create-component
 test my component
