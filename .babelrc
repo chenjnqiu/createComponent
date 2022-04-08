@@ -1,0 +1,24 @@
+{
+    "presets": [
+       "@babel/preset-react", // 编译 jsx 代码
+      [
+        "@babel/preset-env",
+        {
+          "modules": false,
+          "useBuiltIns": "usage", // 按需加载
+          "corejs": 3, // Babel 建议使用 useBuiltIns 选项时显式设置 core-js 版本
+          "targets": {
+            "chrome": "60",
+            "firefox": "60",
+            "ie": "9",
+            "safari": "10",
+            "edge": "17"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+        // 解决多个地方使用相同代码导致打包重复的问题
+        ["@babel/plugin-transform-runtime"]
+    ]
+  }
