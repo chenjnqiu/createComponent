@@ -1,1 +1,2 @@
-export { default as Test } from './Button'
+import './index.less'
+export * from './Button'

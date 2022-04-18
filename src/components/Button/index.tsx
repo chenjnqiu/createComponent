@@ -1,5 +1,4 @@
-import * as React from "react";
-import './index.less'
+import * as React from 'react';
 
 interface ButtonProps {
     buttonWord: string
