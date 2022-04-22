@@ -8,51 +8,9 @@
     "native": false,
     "themeConfig": {},
     "separator": "-",
-    "dest": "/my-dist-folder",
     "base": "/docz",
     "typescript": true
   },
-  "props": [
-    {
-      "key": "src/components/index.tsx",
-      "value": []
-    },
-    {
-      "key": "src/components/Button/index.tsx",
-      "value": [
-        {
-          "tags": {},
-          "filePath": "/mnt/f/personTest/createComponent/src/components/Button/index.tsx",
-          "description": "",
-          "displayName": "Button",
-          "methods": [],
-          "props": {
-            "buttonWord": {
-              "defaultValue": {
-                "value": "defaultWord"
-              },
-              "description": "",
-              "name": "buttonWord",
-              "parent": {
-                "fileName": "createComponent/src/components/Button/index.tsx",
-                "name": "ButtonProps"
-              },
-              "declarations": [
-                {
-                  "fileName": "createComponent/src/components/Button/index.tsx",
-                  "name": "ButtonProps"
-                }
-              ],
-              "required": false,
-              "type": {
-                "name": "string"
-              }
-            }
-          }
-        }
-      ]
-    }
-  ],
   "entries": [
     {
       "key": "README.md",
@@ -125,6 +83,47 @@
           }
         ]
       }
+    }
+  ],
+  "props": [
+    {
+      "key": "src/components/index.tsx",
+      "value": []
+    },
+    {
+      "key": "src/components/Button/index.tsx",
+      "value": [
+        {
+          "tags": {},
+          "filePath": "/mnt/f/personTest/createComponent/src/components/Button/index.tsx",
+          "description": "",
+          "displayName": "Button",
+          "methods": [],
+          "props": {
+            "buttonWord": {
+              "defaultValue": {
+                "value": "defaultWord"
+              },
+              "description": "",
+              "name": "buttonWord",
+              "parent": {
+                "fileName": "createComponent/src/components/Button/index.tsx",
+                "name": "ButtonProps"
+              },
+              "declarations": [
+                {
+                  "fileName": "createComponent/src/components/Button/index.tsx",
+                  "name": "ButtonProps"
+                }
+              ],
+              "required": false,
+              "type": {
+                "name": "string"
+              }
+            }
+          }
+        }
+      ]
     }
   ]
 }
