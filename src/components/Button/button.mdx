@@ -1,15 +1,20 @@
 ---
-name: Button
-route: /
+name: Button 按钮
+route: /Button
+menu: 组件
 ---
 
-import { Playground } from 'docz'
+import { Playground, Props } from 'docz'
 import Button from './'
+import './index.less'
 
-# Button
+# Button 按钮
 
-## Basic usage
+## 参数
 
+<Props of={Button} />
+
+## 基本用法
 <Playground>
-  <Button buttonWord="secondary" />
+  <Button type='primary'>按钮</Button>
 </Playground>

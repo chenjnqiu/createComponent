@@ -1,10 +1,5 @@
-import * as React from 'react';
+import Button from './Button';
 
-interface ButtonProps {
-    buttonWord: string
-}
+export * from './Button'
 
-const Button = ({ buttonWord = 'defaultWord' }: ButtonProps) => {
-    return <div className="kikko-button">{buttonWord}</div>
-}
-export default Button
+export default Button;

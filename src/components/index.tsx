@@ -1,2 +1,2 @@
 import './index.less'
-export * from './Button'
+export * from './button'
