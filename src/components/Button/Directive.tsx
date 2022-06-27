@@ -5,7 +5,6 @@ import { DisabledContext } from '../disabled'
 
 import Icon, { IconType } from '../icon';
 
-
 export interface IButtonDirectiveChildProps {
     className?: string;
     disabled?: boolean;
@@ -55,7 +54,7 @@ export function ButtonDirective <ChildProps extends IButtonDirectiveChildProps> 
         loading,
         disabled = disabledContext.value,
         bordered = true,
-        icon,
+        icon, 
         children
     } = props
 
@@ -69,16 +68,13 @@ export function ButtonDirective <ChildProps extends IButtonDirectiveChildProps> 
     
     const childElement = children as React.ReactElement<ChildProps>
     const onClick = useCallback((e: React.MouseEvent) => {
-        console.log(1)
-        console.log(props)
-        console.log(propsRef.current)
         const { loading, children } = propsRef.current
         const { onClick } = children.props
         const disabled = disabledRef.current
         if(loading || disabled) {
             e.preventDefault()
             return
-        }
+        } 
         onClick?.(e)
     }, [])
 

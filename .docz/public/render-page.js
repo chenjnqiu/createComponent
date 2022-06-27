@@ -37711,9 +37711,6 @@ function ButtonDirective(props) {
   propsRef.current = props;
   const childElement = children;
   const onClick = Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(e => {
-    console.log(1);
-    console.log(props);
-    console.log(propsRef.current);
     const {
       loading,
       children
@@ -37741,7 +37738,7 @@ function ButtonDirective(props) {
     'cjq-btn-disabld': disabled,
     'cjq-btn-border-transparent': !bordered,
     [`cjq-btn-${size}`]: size !== 'medium',
-    [`cjq-btn-${type}-${needOutline ? '-outline' : ''}`]: type !== 'default'
+    [`cjq-btn-${type}${needOutline ? '-outline' : ''}`]: type !== 'default'
   }, 'cjq-btn', children.props.className);
   const commonChildren = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_2__["cloneElement"])(children, {
     className,

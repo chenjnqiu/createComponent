@@ -1,0 +1,131 @@
+.cjq-checkbox-group {
+    display: inline-block;
+    font-size: 0;
+}
+.cjq-checkbox-group > :not(.cjq-checkbox-wrap) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+.cjq-checkbox-wrap {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    margin-right: 24px;
+    vertical-align: middle;
+}
+.cjq-checkbox-wrap:last-child {
+    margin-right: 0;
+}
+.cjq-checkbox-wrap.cjq-checkbox-disabled {
+    cursor: not-allowed;
+}
+.cjq-checkbox-wrap:not(.zent-checkbox-disabled):hover .zent-checkbox-inner {
+    border-color: #155bd4;
+}
+.cjq-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    white-space: nowrap;
+    outline: none;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+.cjq-checkbox > input {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    cursor: pointer;
+}
+.cjq-checkbox-label {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.cjq-checkbox-inner {
+    border-color: #ccc;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+.cjq-checkbox-inner::after {
+    box-sizing: content-box;
+    position: absolute;
+    display: block;
+    content: " ";
+    font-size: 0;
+    top: 3px;
+    left: 2px;
+    width: 10px;
+    height: 8px;
+    background-size: contain;
+    transform: scale(0);
+    transition: all 0.12s ease-in-out;
+}
+.cjq-checkbox-checked > .cjq-checkbox > .cjq-checkbox-inner {
+    border-color: #155bd4;
+    background-color: #155bd4;
+}
+.cjq-checkbox-checked > .cjq-checkbox > .cjq-checkbox-inner::after {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAABGdBTUEAALGPC/xhBQAAASxJREFUOBGlkr9LQlEUx01Di1pCCKQhkAZxaMs/oFnwD3Bwqcmh0cnB0ak5HBwdHNyT5sDFIUIQxMXBQWgIIjB7fa7c+zjvvnfR9MCH8+t7vtOJxfYMz/OyMIIniB/u44dBhvs+ZCEHX7BbYHYGbyBjtpMbDifwKp2ol1D8tyFHSXgGGb805YAZg+PAIKJBE4cu2FH15WyOoA8fUPAXEQX7FthRD0jZdoRiQZ0PCHTDvCl0pnwMadlMzFbnGflSCulrlka1bTiQunXN8AY+QcaY5lwJyPdyoeseOREyMwOWt/CtxSYNKe5gZQY6v5BT5taZEZXgRx+50oDFqdPEXiCugPqpqHhnmLZvNvYcPUS4TZldbDx2CThuCNM59ZVLu/UcE/V36qWutz5C+AfE+OIwPOZePgAAAABJRU5ErkJggg==");
+    transform: scale(1);
+}
+.cjq-checkbox-indeterminate > .cjq-checkbox > .cjq-checkbox-inner {
+    border-color: #155bd4;
+    background-color: #fff;
+  }
+.cjq-checkbox-indeterminate > .cjq-checkbox > .cjq-checkbox-inner::after {
+    background-color: #155bd4;
+    top: 6px;
+    left: 2px;
+    width: 10px;
+    height: 2px;
+    border: 0;
+    transform: rotate(0deg);
+  }
+  .cjq-checkbox-disabled > span {
+    color: #999;
+  }
+  .cjq-checkbox-disabled > .cjq-checkbox > .cjq-checkbox-inner {
+    background-color: #f7f7f7;
+    border-color: #e0e0e0;
+  }
+  .cjq-checkbox-disabled > .cjq-checkbox > input[type=checkbox] {
+    pointer-events: none;
+  }
+  .cjq-checkbox-disabled.cjq-checkbox-checked > .cjq-checkbox > .cjq-checkbox-inner:after {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAABGdBTUEAALGPC/xhBQAAAeJJREFUOBGlkz9I5FAQxmcSWU9UEIU9xDXJZg+EKywsDmt1GxubK2wEEbG7QkSwsRAEDxu5QrirlANLUUEEFexsrKy8xuTlDyxrcd15orubcd5Ckqeo6BpI5sv3vvzI5E0A3nkEQVBwhPfnUvi/iEjD9/A8z+uuEZ4yKC85iLCmNwoMw7CzWoMTAupLGdjbELBcLrfe3FUOGTSgwKqow4SWGq9T3F7m+v/tDhAMxk8gIqFGkwXT3E+A3EJLHHiuMkx3RbDFbRbVDPO+FSxrS3qaEPTBcf3ju2qt5IbhFzX4WDsi+Mmwr4/8Rduy1mNPi8Df4NAIEXRE1ejA9/3P8aJaXc9fBaBp1ZO7+sm2llVPI8D0rYi6KhEcuW7JVEOO8BeiiOZVj7/bpm2Zc6ontYY6jvME/UsWiHoIKsfu1dVH6fHAzvC3W0nWpUDYtS1jWm7GA7++xJdLzxuCCA5YNscBbuecz3UirP8BqY8nDBtl2G3sqTX5U4QIxiKgbbmTakDVCHjW3tYynM1m047UAOtkbPJ5Y48bmHqqjfoziBfNGX30JZjMJUB5Y9vmby6zUqsHt+5ldCzmcrm/qv+UfgCUgULe/MFvuRSHGVbONOlFwzBKsddQ5VH5zjvs8LD3vwVwD3vnuDdo0l19AAAAAElFTkSuQmCC");
+  }
+  .cjq-checkbox-disabled.cjq-checkbox-indeterminate > .cjq-checkbox > .cjq-checkbox-inner::after {
+    background-color: #e0e0e0;
+  }
+  .cjq-checkbox-disabled .cjq-checkbox-label {
+    color: #ccc;
+  }
+  
