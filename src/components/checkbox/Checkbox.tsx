@@ -3,6 +3,7 @@ import React, { useCallback, useContext, useRef } from 'react';
 import GroupContext, { ICheckboxContext } from './GroupContext';
 import { DisabledContext, IDisabledContext } from '../disabled';
 import { getWidth } from '../../utils'
+import CheckboxGroup from './Group';
 
 export interface ICheckboxEventTarget<Value> extends ICheckboxProps<Value> {
     type: 'checkbox';
@@ -38,7 +39,7 @@ function getReadOnly<Value>(
     if (typeof props.readOnly === 'boolean') {
         return props.readOnly
     }
-    if (groupCtx.readOnly) {
+    if (groupCtx) {
         return groupCtx.readOnly
     }
     return false
@@ -143,5 +144,7 @@ export function Checkbox<Value>(props: ICheckboxProps<Value>) {
             }
         </label>)
 }
+
+Checkbox.Group = CheckboxGroup;
 
 export default Checkbox

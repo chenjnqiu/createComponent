@@ -82,3 +82,5 @@ export class CheckboxGroup<Value> extends Component<
         </GroupContextProvider>)
     }
 }
+
+export default CheckboxGroup
