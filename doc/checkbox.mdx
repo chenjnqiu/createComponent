@@ -15,67 +15,80 @@ import '../src/components/index.less'
 
 ## 基础用法
 <Playground>
-{() => {
+  {() => {
     const [checked, setChecked] = React.useState(true)
-    return (<>
-        <Checkbox checked={checked} onChange={(e)=>setChecked(e.target.checked)}>Checkbox</Checkbox>
-        <Checkbox checked disabled />
-        <Checkbox disabled />
-    </>)
-}}
+    return (
+      <div>
+          <Checkbox checked={checked} onChange={(e) => setChecked(e.target.checked)}>Checkbox</Checkbox>
+          <Checkbox checked disabled />
+          <Checkbox disabled />
+      </div>
+      )
+  }}
 </Playground>
 
 ## checkbox组
 <Playground>
-{() => {
-    const [checkedList, setCheckedList] = React.useState([])
-    return ( <div>
-        <Checkbox.Group value={checkedList} onChange={(value)=>setCheckedList(value)}>
-          <Checkbox value="Apple">苹果</Checkbox>
-          <Checkbox value="Pear">梨子</Checkbox>
-          <Checkbox value="Orange">橘子</Checkbox>
-          <Checkbox value="OrangeDisabled" disabled>烂苹果</Checkbox>
-        </Checkbox.Group>
-
-      </div>)
-}}
+    {() => {
+        const [checkedList, setCheckedList] = React.useState([])
+        return (
+        <div>
+            <Checkbox.Group value={checkedList} onChange={(value)=>setCheckedList(value)}>
+            <Checkbox value="Apple">苹果</Checkbox>
+            <Checkbox value="Pear">梨子</Checkbox>
+            <Checkbox value="Orange">橘子</Checkbox>
+            <Checkbox value="OrangeDisabled" disabled>烂苹果</Checkbox>
+            </Checkbox.Group>
+        </div>
+        )
+    }}
 </Playground>
 
 ## checkbox全选
 <Playground>
-{() => {
-    const ITEMS = ['Item 1', 'Item 2', 'Item 3'];
+    {() => {
+        const ITEMS = ['Item 1', 'Item 2', 'Item 3'];
+        const [checkedAllList, setAllCheckedList] = React.useState([])
+        const checkedAll =
+        !!checkedAllList.length && checkedAllList.length === ITEMS.length;
+        const indeterminate =
+        !!checkedAllList.length && checkedAllList.length !== ITEMS.length;
+        return (
+        <div>
+            <Checkbox
+            checked={checkedAll}
+            indeterminate={indeterminate}
+            onChange={(e)=>setAllCheckedList(e.target.checked ? ITEMS.slice() : [])}
+            >
+            全选
+            </Checkbox>
+            <div style={{ margin: '5px 0', height: 1, background: '#dcdee0' }}></div>
+            <Checkbox.Group
+            value={checkedAllList}
+            onChange={(value)=>setAllCheckedList(value)}
+            >
+            {ITEMS.map(item =>  <Checkbox key={item} value={item}>{item}</Checkbox>)}
+            </Checkbox.Group>
+        </div>
+        )
+    }}
+</Playground>
 
-    const [checkedAllList, setAllCheckedList] = React.useState([])
-
-    const checkedAll =
-      !!checkedAllList.length && checkedAllList.length === ITEMS.length;
-    const indeterminate =
-      !!checkedAllList.length && checkedAllList.length !== ITEMS.length;
-
-    return (<div>
-        <Checkbox
-          checked={checkedAll}
-          indeterminate={indeterminate}
-          onChange={(e)=>setAllCheckedList(e.target.checked ? ITEMS.slice() : [])}
-        >
-          全选
-        </Checkbox>
-        <div style={{ margin: '5px 0', height: 1, background: '#dcdee0' }}></div>
-
-        <Checkbox.Group
-          value={checkedAllList}
-          onChange={(value)=>setAllCheckedList(value)}
-        >
-          {ITEMS.map(item => {
-            return (
-              <Checkbox key={item} value={item}>
-                {item}
-              </Checkbox>
-            );
-          })}
-        </Checkbox.Group>
-    </div>)
-}}
+## checkbox多行文本
+<Playground>
+  {() => {
+      const [checkedList, setCheckedList] = React.useState([])
+      return (
+        <div className="checkbox-muti-line">
+          <Checkbox.Group value={checkedList} onChange={(value)=>setCheckedList(value)}>
+            <Checkbox value="Apple">
+              我不能创造的东西，我就不了解。
+              <p>我很早就明白知道一样事物(Know-how) 和知道一样事物的名字(Know-what)的分别。</p>
+            </Checkbox>
+            <div style={{ color: '#969799', marginTop: 8 }}>事实证明真理总是比你想象得更简单。</div>
+          </Checkbox.Group>
+        </div>
+    )
+  }}
 </Playground>
 
