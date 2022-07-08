@@ -1,0 +1,38 @@
+---
+name: Link 超链接
+route: /Link
+menu: 组件
+---
+
+import { Playground, Props } from 'docz'
+import Link from '../src/components/link'
+import '../src/components/index.less'
+
+# Link 超链接
+
+## 参数
+<Props of={Link} />
+
+## 基本用法
+<Playground>
+   {() => {
+         return (
+          <div>
+             <div><Link href="https://youzan.com" target="_blank">有赞首页</Link></div>
+             <div>
+                 <Link href="https://youzan.com" disabled>
+                     有赞首页
+                </Link>
+             </div>
+             <div>
+                <Link href="https://youzan.com" target="_blank" weak>有赞首页</Link>
+             </div>
+             <div>
+                <Link href="https://youzan.com" disabled weak>
+                    有赞首页
+                </Link>
+             </div>
+          </div>
+         )
+   }}
+</Playground>
