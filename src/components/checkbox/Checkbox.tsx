@@ -83,15 +83,12 @@ export function Checkbox<Value>(props: ICheckboxProps<Value>) {
     }, [ctxOnChange])
 
     const {
-        checked: _3,
         className,
         style,
-        disabled: _1,
-        readOnly: _2,
         children,
         indeterminate,
         width,
-        value,
+        value: _propsValue,
         labelStyle,
         onMouseEnter,
         onMouseLeave,
@@ -105,7 +102,7 @@ export function Checkbox<Value>(props: ICheckboxProps<Value>) {
     let checked: boolean
     if (groupCtx) {
         const { value, isValueEqual } = groupCtx
-        checked = value.findIndex(it => isValueEqual(it, props.value)) !== -1
+        checked = value.findIndex(it => isValueEqual(it, _propsValue)) !== -1
     } else {
         checked = !!props.checked
     }
