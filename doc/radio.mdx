@@ -1,0 +1,97 @@
+---
+name: Radio单选
+route: /Radio
+menu: 组件
+---
+
+import { Playground, Props } from 'docz'
+import Radio from '../src/components/Radio'
+import '../src/components/index.less'
+
+# radio 单选
+
+## 参数
+<Props of={Radio} />
+
+## 基础用法
+<Playground>
+  {() => {
+    const [checked, setChecked] = React.useState('male')
+    const [fruit, setFruit] = React.useState('apple')
+    return (
+      <div>
+          <div>
+              <Radio.Group value={checked} onChange={e => setChecked(e.target.value)}>
+                <Radio value="male">男</Radio>
+                <Radio value="female">女</Radio>
+              </Radio.Group>
+          </div>
+          <div>
+             <Radio.Group onChange={e => setFruit(e.target.value)} value={fruit}>
+                <Radio value="apple">苹果</Radio>
+                <Radio value="pears">梨子</Radio>
+                <Radio value="cucumber" disabled>黄瓜</Radio>
+              </Radio.Group>
+          </div>
+      </div>
+      )
+  }}
+</Playground>
+
+## 支持自定义比较函数
+<Playground>
+  {() => {
+    const [checked, setChecked] = React.useState({ foo: 1 })
+    const isValueEqual = (a, b) => {
+      return a && b && a.foo === b.foo;
+    }
+    return (
+      <div>
+         <Radio.Group 
+          value={checked} 
+          onChange={e => setChecked(e.target.value)}
+          isValueEqual={isValueEqual}
+          >
+            <Radio value={{ foo: 1 }}>Foo 1</Radio>
+            <Radio value={{ foo: 2 }}>Foo 2</Radio>
+          </Radio.Group>
+      </div>
+      )
+  }}
+</Playground>
+
+## 多行文本
+<Playground>
+  {() => {
+    return (
+      <div>
+         <Radio.Group 
+          value='1'
+          >
+            <Radio value='1' labelStyle={{display: 'inline-block'}}>
+                 我不能创造的东西，我就不了解。
+                  <p>我很早就明白知道一样事物(Know-how) 和知道一样事物的名字(Know-what)的分别。</p>
+            </Radio>
+          </Radio.Group>
+      </div>
+      )
+  }}
+</Playground>
+
+## 分段按钮组
+<Playground>
+  {() => {
+    const [checked, setChecked] = React.useState('apple')
+    return (
+      <div>
+         <Radio.Group onChange={e => setChecked(e.target.value)} value={checked}>
+            <Radio.Button value="apple" disabled>苹果</Radio.Button>
+            <Radio.Button value="pear" disabled>梨</Radio.Button>
+            <Radio.Button value="banana">香蕉</Radio.Button>
+            <Radio.Button value="tomato">西红柿</Radio.Button>
+          </Radio.Group>
+      </div>
+      )
+  }}
+</Playground>
+
