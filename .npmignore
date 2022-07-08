@@ -1,6 +1,10 @@
 node_modules/
 src/
+doc/
+.docz/
 .babelrc
 .gitignore
 rollup.config.js
 tsconfig.json
+doczrc.js
+gatsby-config.js
