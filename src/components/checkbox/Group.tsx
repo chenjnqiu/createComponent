@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 import GroupContext from './GroupContext';
-import { DisabledContext, IDisabledContext } from '../disabled';
+import { DisabledContext } from '../disabled';
 import memoize from '../../utils/memorize-one';
 
 const GroupContextProvider = GroupContext.Provider;

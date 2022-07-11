@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { IDisabledContext } from '../disabled';
 export interface ICheckboxGroupProps<Value> {
     value: Value[];
     isValueEqual?: (value1: Value, value2: Value) => boolean;
@@ -14,7 +13,7 @@ export declare class CheckboxGroup<Value> extends Component<ICheckboxGroupProps<
         isValueEqual: (value1: any, value2: any) => boolean;
         value: any[];
     };
-    static contextType: React.Context<IDisabledContext>;
+    static contextType: React.Context<import("../disabled").IDisabledContext>;
     getGroupContext: (maybeValue: Value[] | unknown, disabled: boolean, readOnly: boolean, isValueEqual: (value1: Value, value2: Value) => boolean) => {
         value: Value[];
         disabled: boolean;
