@@ -1,6 +1,6 @@
 {
   "name": "chenjinqiu-component",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "test my component",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
