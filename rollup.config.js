@@ -31,7 +31,7 @@ export default {
             plugins: [autoprefixer,cssnano],
             extensions: ['.less', '.css'],
             use: ['less'],
-            extract: 'styles/index.css', // 输出路径
+            extract: 'index.css', // 输出路径
         }),
         resolve(), // 查找和打包node_modules中的第三方模块
         commonjs(), // 将 CommonJS 转换成 ES2015 模块供 Rollup 处理
