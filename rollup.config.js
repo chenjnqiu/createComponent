@@ -10,10 +10,14 @@ import json from 'rollup-plugin-json';
 import image from '@rollup/plugin-image';
 import eslint from '@rollup/plugin-eslint'
 import copy from 'rollup-plugin-copy'
+import alias from '@rollup/plugin-alias'
 
 import pkg from './package.json';
 
 const isDev = process.env.NODE_ENV !== 'production';
+const path = require('path')
+const resolveDir = dir => path.join(__dirname, dir)
+
 
 export default {
     input: 'src/components/index.tsx', // 打包入口
@@ -32,7 +36,7 @@ export default {
             plugins: [autoprefixer,cssnano],
             extensions: ['.less', '.css'],
             use: ['less'],
-            extract: 'styles/index.css', // 输出路径
+           // extract: 'styles/index.css', // 输出路径,打包后单独引用
         }),
         copy({
             targets: [
@@ -41,6 +45,12 @@ export default {
                  dest: 'lib/assets/fonts'
                }
              ]
+        }),
+        alias({
+            entries: [{
+                find: '@',
+                replacement: resolveDir('src')
+            }]
         }),
         resolve(), // 查找和打包node_modules中的第三方模块
         commonjs(), // 将 CommonJS 转换成 ES2015 模块供 Rollup 处理
