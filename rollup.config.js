@@ -37,8 +37,8 @@ export default {
         copy({
             targets: [
                {
-                 src: 'src/assets/**',
-                 dest: 'lib/assets/**'
+                 src: 'src/assets/fonts/**',
+                 dest: 'lib/assets/fonts'
                }
              ]
         }),
