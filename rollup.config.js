@@ -9,6 +9,7 @@ import { terser } from 'rollup-plugin-terser';
 import json from 'rollup-plugin-json';
 import image from '@rollup/plugin-image';
 import eslint from '@rollup/plugin-eslint'
+import copy from 'rollup-plugin-copy'
 
 import pkg from './package.json';
 
@@ -32,6 +33,14 @@ export default {
             extensions: ['.less', '.css'],
             use: ['less'],
             extract: 'styles/index.css', // 输出路径
+        }),
+        copy({
+            targets: [
+               {
+                 src: 'src/assets/**',
+                 dest: 'lib/assets/**'
+               }
+             ]
         }),
         resolve(), // 查找和打包node_modules中的第三方模块
         commonjs(), // 将 CommonJS 转换成 ES2015 模块供 Rollup 处理
