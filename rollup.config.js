@@ -9,8 +9,8 @@ import { terser } from 'rollup-plugin-terser';
 import json from 'rollup-plugin-json';
 import image from '@rollup/plugin-image';
 import eslint from '@rollup/plugin-eslint'
-import copy from 'rollup-plugin-copy'
 import alias from '@rollup/plugin-alias'
+import font from "rollup-plugin-font";
 
 import pkg from './package.json';
 
@@ -38,20 +38,23 @@ export default {
             use: ['less'],
            // extract: 'styles/index.css', // 输出路径,打包后单独引用
         }),
-        copy({
-            targets: [
-               {
-                 src: 'src/assets/fonts/**',
-                 dest: 'lib/assets/fonts'
-               }
-             ]
-        }),
         alias({
             entries: [{
                 find: '@',
                 replacement: resolveDir('src')
             }]
         }),
+        font({
+			"unicode":{
+				"include":["src/assets/fonts/iconfont.woff"],
+				"prefix":"unicode-"
+			},
+			"css":{
+				"include":["src/components/icon/index.less"],
+				"prefix":"icon-",
+				"common":"iconfont"
+			}
+		}),
         resolve(), // 查找和打包node_modules中的第三方模块
         commonjs(), // 将 CommonJS 转换成 ES2015 模块供 Rollup 处理
         eslint({
