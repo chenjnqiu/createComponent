@@ -45,6 +45,7 @@ export default {
             }]
         }),
         font({
+            "svg":"src/assets/fonts/iconfont.svg",
 			"unicode":{
 				"include":["src/assets/fonts/iconfont.woff"],
 				"prefix":"unicode-"
