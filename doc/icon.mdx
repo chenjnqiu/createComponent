@@ -31,7 +31,7 @@ import '../src/components/index.less'
     'customer-o','down','up','settings-o','plus-circle-o','reverse','forward','closed','lock','delete','menu','position']
     return (
       <div>
-         {typeList.map(item =>  <Icon type={item} />)}
+         {typeList.map(item =>  <Icon type={item} key={item} />)}
       </div>
     )
   }}
