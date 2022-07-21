@@ -28,7 +28,12 @@ export default {
             format: 'umd', // umd是兼容amd/cjs/iife的通用打包格式，适合浏览器
         },
         { file: pkg.main, format: 'cjs' },
-        { file: pkg.module, format: 'es' }
+        { file: pkg.module, format: 'es' },
+        {
+            dir:'./lib',
+            format: 'iife',
+            assetFileNames:"assets/[name].[hash][extname]",
+        }
     ],
     plugins: [ // 打包插件
         // postcss处理less文件，并用 autoprefixer 处理兼容,cssnano 压缩
@@ -45,7 +50,7 @@ export default {
             }]
         }),
         font({
-            "svg":"src/assets/fonts/iconfont.svg",
+			"svg":"./src/assets/fonts/iconfont.svg",
 			"unicode":{
 				"include":["src/assets/fonts/iconfont.woff"],
 				"prefix":"unicode-"
