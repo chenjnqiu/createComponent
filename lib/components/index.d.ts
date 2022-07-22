@@ -5,3 +5,4 @@ export * from './disabled';
 export * from './checkbox';
 export * from './radio';
 export * from './link';
+export * from './badge';

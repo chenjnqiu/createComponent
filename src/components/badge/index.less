@@ -1,0 +1,67 @@
+@count-height: 18px;
+@dot-diameter: 8px;
+
+.cjq-badge {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    .cjq-badge-count {
+        background-color: #d42f15;
+        color: #fff;
+        display: inline-block;
+        height: @count-height;
+        min-width: @count-height;
+        line-height: @count-height - 2px;
+        box-sizing: border-box;
+        text-align: center; 
+        padding: 0 4px;
+        border: 1px solid #fff;
+        border-radius: 40px;
+        font-size: 12px;
+
+        &-num {
+            display: block;
+            transform: scale(0.83);
+        }
+    }
+
+    .cjq-badge-dot {
+        border: 1px solid #fff;
+        background-color: #d42f15;
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        font-size: 0;
+    }
+
+    &.cjq-badge--no-content {
+        font-size: 0;
+
+        .cjq-badge-count {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        .cjq-badge-count,
+        .cjq-badge-dot {
+            margin: 0 8px;
+            border: 0;
+        }
+    }
+
+    &.cjq-badge--has-content {
+        .cjq-badge-count {
+            position: absolute;
+            top: -4px;
+            right: -6px;
+        }
+
+        .cjq-badge-dot {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}

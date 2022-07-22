@@ -1,0 +1,75 @@
+---
+name: Badge 徽标
+route: /Badge
+menu: 组件
+---
+
+import { Playground, Props } from 'docz'
+import Badge from '../src/components/Badge'
+import Icon from '../src/components/Icon'
+import '../src/components/index.less'
+import './base.less'
+
+# Badge 徽标
+
+## 参数
+
+<Props of={Badge} />
+
+## 基本用法
+<Playground>
+     <div>
+        <Badge count={5}>
+            <Icon type="bell-o" className='demo-cont' />
+        </Badge>   
+    </div>
+</Playground>
+
+## 独立徽标，展示在右侧
+<Playground>
+     <div>
+        <span>店铺消息</span>
+        <Badge count={100} />
+    </div>
+</Playground>
+
+## 设置最大信息数
+<Playground>
+     <div className='demo-Badge-max'>
+        <Badge count={99}>
+            <Icon type="bell-o" className='demo-cont' />
+        </Badge>
+        <Badge count={120}>
+            <Icon type="bell-o" className='demo-cont' />
+        </Badge>
+        <Badge count={120}>
+            <Icon type="bell-o" className='demo-cont' />
+        </Badge>
+    </div>
+</Playground>
+
+## 设置是否显示消息数0
+<Playground>
+     <div className='demo-Badge-max'>
+        <Badge count={0} showZero={true}>
+            <Icon type="bell-o" className='demo-cont' />
+        </Badge>
+        <Badge count={0}>
+            <Icon type="bell-o" className='demo-cont' />
+        </Badge>
+    </div>
+</Playground>
+
+## 红点徽标，不需要指定具体得count
+<Playground>
+     <div className='demo-Badge-max'>
+        <Badge dot={true}>
+            <Icon type="bell-o" className='demo-cont' />
+        </Badge>
+        <Badge dot={true} offset={[-4, -2]}>店铺消息</Badge>
+    </div>
+</Playground>
+
+
+
+
