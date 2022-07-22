@@ -1,0 +1,47 @@
+---
+name: Switch 开关
+route: /Switch
+menu: 组件
+---
+
+import { Playground, Props } from 'docz'
+import Switch from '../src/components/Switch'
+import '../src/components/index.less'
+import './base.less'
+
+# Switch 开关
+
+## 参数
+
+<Props of={Switch} />
+
+## 基本用法
+<Playground>
+   {() => {
+    const [checkedLarge, setCheckedLarge] = React.useState(true)
+    return (
+      <div>
+        <Switch
+          checked={checkedLarge}
+          onChange={(checked) => setCheckedLarge(checked)}
+        />
+      </div>
+      )
+  }}
+</Playground>
+
+## 失效状态
+<Playground>
+  <div>
+    <Switch checked disabled />
+    <Switch checked={false} disabled />
+  </div>
+</Playground>
+
+## 开关loading
+<Playground>
+  <div>
+    <Switch checked loading />
+    <Switch loading />
+  </div>
+</Playground>

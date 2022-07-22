@@ -25,6 +25,7 @@ export interface IconProps extends React.HTMLAttributes<HTMLElement> {
       * |'settings-o'|'plus-circle-o'|'reverse'|'forward'|'closed'|'lock'|delete'|'menu'|'position' */
     type: IconType;
     spin?: boolean;
+    className?: string;
 }
 
 const Icon = forwardRef<HTMLElement, IconProps> (
