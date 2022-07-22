@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
-import { DisabledContext, IDisabledContext } from '../disabled';
+import { DisabledContext } from '../disabled';
 
 export interface ISwitchProps {
     checked?: boolean;

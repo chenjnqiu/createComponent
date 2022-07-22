@@ -5,6 +5,7 @@ export interface IconProps extends React.HTMLAttributes<HTMLElement> {
      * |'settings-o'|'plus-circle-o'|'reverse'|'forward'|'closed'|'lock'|delete'|'menu'|'position' */
     type: IconType;
     spin?: boolean;
+    className?: string;
 }
 declare const Icon: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<HTMLElement>>;
 export { Icon };
