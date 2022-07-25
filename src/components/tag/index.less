@@ -1,0 +1,116 @@
+.cjq-tag {
+    color: #fff;
+    border-color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px 4px;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+    &.cjq-tag-size-medium {
+        font-size: 14px;
+    }
+    &.cjq-tag-size-large {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    &.cjq-tag-rounded {
+        border-radius: 2px;
+    }
+    &.cjq-tag-closable {
+        .cjq-tag-content {
+          display: inline-block;
+          margin-right: 4px;
+        }
+    
+        .cjq-tag-close-btn {
+          cursor: pointer;
+          font-size: 12px;
+          transform: translate(2px, 0);
+        }
+    }
+    &.cjq-tag-style-red { 
+        background-color: #d42f15;
+        border-color: #d42f15;
+    }
+    &.cjq-tag-style-red-outline { 
+        border-color: #d42f15;
+        color: #d42f15;
+    }
+    &.cjq-tag-style-green {
+        background-color: #45a110;
+        border-color: #45a110;
+    }
+    
+    &.cjq-tag-style-green-outline {
+        color: #45a110;
+        border-color: #45a110;
+    }
+    &.cjq-tag-style-yellow {
+        background-color: #ed6a18;
+        border-color: #ed6a18;
+    }
+    
+    &.cjq-tag-style-yellow-outline {
+        color: #ed6a18;
+        border-color: #ed6a18;
+    }
+    &.cjq-tag-style-blue {
+        background-color: #155bd4;
+        border-color: #155bd4;
+    }
+    
+    &.cjq-tag-style-blue-outline {
+        color: #155bd4;
+        border-color: #155bd4;
+    }
+    &.cjq-tag-style-grey {
+        color: #333;
+        background-color: #f7f7f7;
+        border-color: #f7f7f7;
+    }
+    
+    &.cjq-tag-style-grey-outline {
+        color: #333;
+        border-color: #e0e0e0;
+    }
+    &.cjq-link-tag {
+        padding: 0 4px;
+    
+        .cjq-tag-content {
+          display: flex;
+          align-items: center;
+        }
+    
+        .cjq-link-tag-right-icon {
+          margin-right: -4px;
+          font-size: 16px;
+          color: #999;
+        }
+    
+        &:hover {
+          cursor: pointer;
+          color: #155bd4;
+          border-color: #155bd4;
+    
+          .cjq-link-tag-right-icon {
+            color: #155bd4;
+          }
+        }
+    }
+    
+    &.cjq-select-tag {
+        cursor: pointer;
+    
+        &.cjq-select-tag-selected {
+            color: #155bd4;
+            background-color: #e6efff;
+            border-color: #e6efff;
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}

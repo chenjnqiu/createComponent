@@ -1,7 +1,7 @@
 ---
 name: Icon 图标
 route: /Icon
-menu: 组件
+menu: 基础控件
 ---
 
 import { Playground, Props } from 'docz'
@@ -28,7 +28,7 @@ import '../src/components/index.less'
 <Playground>
   {() => {
     const typeList = ['subtract-circle-o', 'close-circle-o', 'check-circle-o','search','bell-o',
-    'customer-o','down','up','settings-o','plus-circle-o','reverse','forward','closed','lock','delete','menu','position']
+    'customer-o','down','up','settings-o','plus-circle-o','reverse','forward','closed','lock','delete','menu','position','arrow-right','arrow-left','prompt']
     return (
       <div>
          {typeList.map(item =>  <Icon type={item} key={item} />)}

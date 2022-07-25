@@ -1,0 +1,105 @@
+---
+name: Tag 标签
+route: /Tag
+menu: 基础控件
+---
+
+import { Playground, Props } from 'docz'
+import { Tag, LinkTag, SelectTag } from '../src/components/tag'
+import '../src/components/index.less'
+import './base.less'
+
+# Tag 标签
+
+## 参数
+<Props of={Tag} />
+
+## 基本用法
+<Playground>
+  <div>
+      <Tag outline>标签内容</Tag>
+      <LinkTag><a href="#">链接</a></LinkTag>
+      <Tag outline>小标签</Tag>
+      <Tag outline size="medium">中标签</Tag>
+      <Tag outline size="large">大标签</Tag>
+  </div>
+</Playground>
+
+## 可选中标签
+<Playground>
+   {() => {
+    const [selected, setSelected] = React.useState(true);
+    return (
+      <div>
+        <SelectTag selected={selected} onChange={selected => setSelected(selected)}>选中标签</SelectTag>
+      </div>
+      )
+  }}
+</Playground>
+
+## 自定义颜色非圆角，标签大小
+<Playground>
+  <div>
+     <Tag
+      style={{
+        borderColor: '#9370db',
+        backgroundColor: '#9370db',
+      }}
+    >
+      #9370db
+    </Tag>
+    <Tag
+      style={{
+        borderColor: '#9370db',
+        color: '#9370db',
+      }}
+      outline
+    >
+      #9370db
+    </Tag>
+    <Tag
+      style={{
+        borderColor: '#87d068',
+        backgroundColor: '#cfefdf',
+        color: '#00a854',
+      }}
+    >
+      自定义色彩
+    </Tag>
+    <Tag
+      style={{
+        borderColor: '#778899',
+        backgroundColor: '#778899',
+      }}
+      rounded={false}
+    >
+      非圆角
+    </Tag>
+    <Tag
+      style={{
+        borderColor: '#48d1cc',
+        backgroundColor: '#48d1cc',
+        fontSize: 14,
+      }}
+    >
+      大标签
+    </Tag>
+  </div>
+</Playground>
+
+## 关闭
+<Playground>
+   {() => {
+    const [selected, setSelected] = React.useState(true);
+    return (
+      <div>
+        <Tag closable onClose={e => console.log(e)} outline>
+            自定义色彩
+        </Tag>
+        <Tag theme="grey" closable closeButtonStyle={{ color: '#969799' }}>
+             自定义关闭按钮颜色
+        </Tag>
+      </div>
+      )
+  }}
+</Playground>

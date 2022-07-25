@@ -19,10 +19,13 @@ export type IconType =
 |'delete'
 |'menu'
 |'position'
+|'arrow-right'
+|'arrow-left'
+|'prompt'
 
 export interface IconProps extends React.HTMLAttributes<HTMLElement> {
      /** 图标类型包括'subtract-circle-o'|'close-circle-o' |'check-circle-o|'search'|'bell-o'|'customer-o'|'down'|'up'
-      * |'settings-o'|'plus-circle-o'|'reverse'|'forward'|'closed'|'lock'|delete'|'menu'|'position' */
+      * |'settings-o'|'plus-circle-o'|'reverse'|'forward'|'closed'|'lock'|delete'|'menu'|'position'|'arrow-right'|'arrow-left'|'prompt' */
     type: IconType;
     spin?: boolean;
     className?: string;
